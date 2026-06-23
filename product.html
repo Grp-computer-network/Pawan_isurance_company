@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Products | Pavan Insurance Company</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005BAC',
+                        secondary: '#F58220'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50">
+
+<!-- NAVBAR -->
+<nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+        <a href="index.html" class="text-2xl font-bold text-primary">
+            Pavan Insurance
+        </a>
+
+        <div class="hidden md:flex gap-8 font-medium">
+            <a href="index.html" class="hover:text-primary">Home</a>
+            <a href="about.html" class="hover:text-primary">About</a>
+            <a href="product.html" class="text-primary font-semibold">
+                Products
+            </a>
+            <a href="claim.html" class="hover:text-primary">Claims</a>
+        </div>
+        <a href="login.html"
+           class="bg-primary text-white px-5 py-2 rounded-lg">
+            Login
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="bg-primary text-white py-20">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h1 class="text-5xl font-bold">
+            Insurance Products
+        </h1>
+
+        <p class="mt-5 text-lg max-w-3xl mx-auto">
+            Explore insurance plans designed to protect
+            your health, vehicle, home, and travel.
+        </p>
+
+    </div>
+</section>
+
+<!-- SEARCH -->
+<section class="py-10 bg-white shadow-sm">
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-3 gap-4">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search insurance..."
+                class="border p-4 rounded-lg"
+            >
+
+            <select
+                id="categoryFilter"
+                class="border p-4 rounded-lg"
+            >
+                <option value="all">All Categories</option>
+                <option value="health">Health</option>
+                <option value="car">Car</option>
+                <option value="bike">Bike</option>
+                <option value="travel">Travel</option>
+                <option value="home">Home</option>
+                <option value="life">Life</option>
+            </select>
+
+            <button
+                class="bg-secondary text-white rounded-lg px-6"
+            >
+                Search
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div
+            id="productsGrid"
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+
+            <!-- HEALTH -->
+            <div
+                class="product-card bg-white rounded-3xl shadow-lg overflow-hidden"
+                data-category="health"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-56 object-cover"
+                    alt="Health Insurance"
+                >
+
+                <div class="p-6">
+
+                    <div class="text-5xl">🏥</div>
+
+                    <h3 class="text-2xl font-bold mt-4">
+                        Health Insurance
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Comprehensive medical coverage for
+                        individuals and families.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-sm text-gray-600">
+                        <li>✔ Cashless hospitals</li>
+                        <li>✔ Pre & post hospitalization</li>
+                        <li>✔ Tax benefits</li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="font-bold text-primary">
+                            Starting ₹499/month
+                        </span>
+
+                        <a
+                            href="insurance/health-insurance.html"
+                            class="bg-primary text-white px-5 py-2 rounded-lg"
+                        >
+                            View
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CAR -->
+            <div
+                class="product-card bg-white rounded-3xl shadow-lg overflow-hidden"
+                data-category="car"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-56 object-cover"
+                    alt="Car Insurance"
+                >
+
+                <div class="p-6">
+
+                    <div class="text-5xl">🚗</div>
+
+                    <h3 class="text-2xl font-bold mt-4">
+                        Car Insurance
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Protect your car against accidents,
+                        theft and natural disasters.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-sm text-gray-600">
+                        <li>✔ Third party cover</li>
+                        <li>✔ Own damage cover</li>
+                        <li>✔ Cashless garages</li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="font-bold text-primary">
+                            Starting ₹699/month
+                        </span>
+
+                        <a
+                            href="insurance/car-insurance.html"
+                            class="bg-primary text-white px-5 py-2 rounded-lg"
+                        >
+                            View
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- BIKE -->
+            <div
+                class="product-card bg-white rounded-3xl shadow-lg overflow-hidden"
+                data-category="bike"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-56 object-cover"
+                    alt="Bike Insurance"
+                >
+
+                <div class="p-6">
+
+                    <div class="text-5xl">🏍️</div>
+
+                    <h3 class="text-2xl font-bold mt-4">
+                        Bike Insurance
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Keep your two wheeler protected
+                        at affordable premiums.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-sm text-gray-600">
+                        <li>✔ Accident cover</li>
+                        <li>✔ Theft protection</li>
+                        <li>✔ Fast claims</li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="font-bold text-primary">
+                            Starting ₹299/month
+                        </span>
+
+                        <a
+                            href="insurance/bike-insurance.html"
+                            class="bg-primary text-white px-5 py-2 rounded-lg"
+                        >
+                            View
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- MORE PRODUCTS -->
+<section class="pb-20">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- TRAVEL INSURANCE -->
+            <div
+                class="product-card bg-white rounded-3xl shadow-lg overflow-hidden"
+                data-category="travel"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1502920917128-1aa500764ce7?auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-56 object-cover"
+                    alt="Travel Insurance"
+                >
+
+                <div class="p-6">
+                    <div class="text-5xl">✈️</div>
+
+                    <h3 class="text-2xl font-bold mt-4">
+                        Travel Insurance
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Travel confidently with coverage for
+                        emergencies, delays and lost baggage.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-sm text-gray-600">
+                        <li>✔ International coverage</li>
+                        <li>✔ Trip cancellation protection</li>
+                        <li>✔ Emergency assistance</li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="font-bold text-primary">
+                            Starting ₹399/month
+                        </span>
+
+                        <a
+                            href="insurance/travel-insurance.html"
+                            class="bg-primary text-white px-5 py-2 rounded-lg"
+                        >
+                            View
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOME INSURANCE -->
+            <div
+                class="product-card bg-white rounded-3xl shadow-lg overflow-hidden"
+                data-category="home"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-56 object-cover"
+                    alt="Home Insurance"
+                >
+
+                <div class="p-6">
+                    <div class="text-5xl">🏠</div>
+
+                    <h3 class="text-2xl font-bold mt-4">
+                        Home Insurance
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Protect your home and valuables
+                        against unforeseen events.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-sm text-gray-600">
+                        <li>✔ Fire protection</li>
+                        <li>✔ Theft coverage</li>
+                        <li>✔ Natural disasters</li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="font-bold text-primary">
+                            Starting ₹599/month
+                        </span>
+
+                        <a
+                            href="insurance/home-insurance.html"
+                            class="bg-primary text-white px-5 py-2 rounded-lg"
+                        >
+                            View
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LIFE INSURANCE -->
+            <div
+                class="product-card bg-white rounded-3xl shadow-lg overflow-hidden"
+                data-category="life"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-56 object-cover"
+                    alt="Life Insurance"
+                >
+
+                <div class="p-6">
+                    <div class="text-5xl">💼</div>
+
+                    <h3 class="text-2xl font-bold mt-4">
+                        Life Insurance
+                    </h3>
+
+                    <p class="text-gray-600 mt-3">
+                        Secure long-term financial protection for your family.
+                    </p>
+
+                    <ul class="mt-5 space-y-2 text-sm text-gray-600">
+                        <li>✔ Term insurance plans</li>
+                        <li>✔ Savings and protection</li>
+                        <li>✔ Multi-brand plan options</li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="font-bold text-primary">
+                            Starting ₹499/month
+                        </span>
+
+                        <a
+                            href="insurance/life-insurance.html"
+                            class="bg-primary text-white px-5 py-2 rounded-lg"
+                        >
+                            View
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCT COMPARISON -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                Compare Insurance Plans
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+                Find the plan that best suits your needs.
+            </p>
+        </div>
+
+        <div class="overflow-x-auto mt-12">
+
+            <table class="w-full bg-white shadow-lg rounded-xl overflow-hidden">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th class="p-4 text-left">Feature</th>
+                        <th class="p-4">Health</th>
+                        <th class="p-4">Car</th>
+                        <th class="p-4">Bike</th>
+                        <th class="p-4">Travel</th>
+                        <th class="p-4">Home</th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-center">
+
+                    <tr class="border-b">
+                        <td class="p-4 text-left font-medium">
+                            Online Purchase
+                        </td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+
+                    <tr class="border-b">
+                        <td class="p-4 text-left font-medium">
+                            Cashless Claims
+                        </td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+
+                    <tr class="border-b">
+                        <td class="p-4 text-left font-medium">
+                            Emergency Assistance
+                        </td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+
+                    <tr>
+                        <td class="p-4 text-left font-medium">
+                            Tax Benefits
+                        </td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- WHY OUR PRODUCTS -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                Why Choose Our Insurance?
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+                Experience reliability, transparency and customer-first service.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+
+            <div class="bg-white p-8 rounded-2xl shadow text-center">
+                <div class="text-5xl">⚡</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Fast Claims
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Quick and hassle-free claim settlement.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow text-center">
+                <div class="text-5xl">🛡️</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Trusted Protection
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Comprehensive coverage for every stage of life.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow text-center">
+                <div class="text-5xl">📞</div>
+                <h3 class="font-bold text-xl mt-4">
+                    24×7 Support
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Dedicated support whenever you need help.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow text-center">
+                <div class="text-5xl">💰</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Affordable Plans
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Flexible premiums designed for every budget.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-secondary text-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold">
+            Ready to Protect What Matters?
+        </h2>
+
+        <p class="mt-5 text-lg">
+            Explore our plans and get insured in minutes.
+        </p>
+
+        <a
+            href="contact.html"
+            class="inline-block mt-8 bg-white text-secondary px-8 py-4 rounded-lg font-bold"
+        >
+            Contact Us
+        </a>
+
+    </div>
+</section>
+<!-- FAQ SECTION -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                Frequently Asked Questions
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+                Common questions about our insurance products.
+            </p>
+        </div>
+
+        <div class="mt-10 space-y-4">
+
+            <div class="bg-white rounded-xl shadow">
+                <button
+                    class="faq-btn w-full p-5 text-left flex justify-between items-center font-semibold"
+                >
+                    Which insurance policy should I choose?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    The best policy depends on your needs. Health insurance protects medical expenses, while car, bike, travel and home insurance cover different assets and risks.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow">
+                <button
+                    class="faq-btn w-full p-5 text-left flex justify-between items-center font-semibold"
+                >
+                    Can I buy insurance online?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    Yes. You can compare plans, get quotes and purchase policies online.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow">
+                <button
+                    class="faq-btn w-full p-5 text-left flex justify-between items-center font-semibold"
+                >
+                    How long does claim settlement take?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    Claim settlement time varies depending on the policy and submitted documents.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300">
+
+    <div class="max-w-7xl mx-auto px-6 py-14">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            <div>
+                <h3 class="text-2xl font-bold text-white">
+                    Pavan Insurance
+                </h3>
+
+                <p class="mt-4">
+                    Protecting lives, vehicles, homes and businesses with reliable insurance solutions.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-4">
+                    Company
+                </h4>
+
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    <li><a href="claim.html" class="hover:text-white">Claims</a></li>
+                    <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-4">
+                    Products
+                </h4>
+
+                <ul class="space-y-2">
+                    <li><a href="insurance/health-insurance.html">Health Insurance</a></li>
+                    <li><a href="insurance/car-insurance.html">Car Insurance</a></li>
+                    <li><a href="insurance/bike-insurance.html">Bike Insurance</a></li>
+                    <li><a href="insurance/travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="insurance/home-insurance.html">Home Insurance</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-4">
+                    Contact
+                </h4>
+
+                <p>📞 +91 98765 43210</p>
+                <p class="mt-2">✉ support@pavaninsurance.com</p>
+                <p class="mt-2">📍 India</p>
+            </div>
+
+        </div>
+
+        <hr class="border-gray-700 my-8">
+
+        <div class="text-center text-sm">
+            © 2026 Pavan Insurance Company. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // Search & Filter
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const cards = document.querySelectorAll(".product-card");
+
+    function filterProducts() {
+
+        const search = searchInput.value.toLowerCase();
+        const category = categoryFilter.value;
+
+        cards.forEach(card => {
+
+            const text = card.innerText.toLowerCase();
+            const cardCategory = card.dataset.category;
+
+            const searchMatch = text.includes(search);
+
+            const categoryMatch =
+                category === "all" ||
+                category === cardCategory;
+
+            if(searchMatch && categoryMatch){
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    }
+
+    searchInput.addEventListener("keyup", filterProducts);
+    categoryFilter.addEventListener("change", filterProducts);
+
+
+    // FAQ Accordion
+    document.querySelectorAll(".faq-btn").forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector("span");
+
+            content.classList.toggle("hidden");
+
+            icon.textContent =
+                content.classList.contains("hidden")
+                    ? "+"
+                    : "-";
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavan Insurance Company</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005BAC',
+                        secondary: '#F58220'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(
+                rgba(0,0,0,0.45),
+                rgba(0,0,0,0.45)
+            ),
+            url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80');
+
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+
+        <div class="flex items-center gap-2">
+            <div class="bg-primary text-white px-3 py-2 rounded-lg font-bold">
+                PI
+            </div>
+            <h1 class="text-2xl font-bold text-primary">
+                Pawan Insurance
+            </h1>
+        </div>
+
+        <ul class="hidden md:flex gap-8 font-medium">
+            <li><a href="#home" class="hover:text-primary">Home</a></li>
+            <li><a href="#products" class="hover:text-primary">Products</a></li>
+            <li><a href="#about" class="hover:text-primary">About</a></li>
+            <li><a href="#claims" class="hover:text-primary">Claims</a></li>
+            <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+        </ul>
+
+        <div class="hidden md:flex gap-3">
+            <a href="login.html" class="border border-primary text-primary px-5 py-2 rounded-lg hover:bg-primary hover:text-white transition">
+                Login
+            </a>
+
+            <a href="#contact" class="bg-secondary text-white px-5 py-2 rounded-lg hover:opacity-90">
+                Get Quote
+            </a>
+        </div>
+
+        <button id="menuBtn" class="md:hidden text-3xl">
+            ☰
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden bg-white border-t">
+        <a href="#home" class="block p-4">Home</a>
+        <a href="#products" class="block p-4">Products</a>
+        <a href="#about" class="block p-4">About</a>
+        <a href="#claims" class="block p-4">Claims</a>
+        <a href="#faq" class="block p-4">FAQ</a>
+        <a href="#contact" class="block p-4">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero-bg h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-6 text-white">
+
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+            Secure Your Future <br>
+            With Trusted Insurance
+        </h1>
+
+        <p class="mt-6 text-xl max-w-2xl">
+            Health, Car, Bike, Travel and Home Insurance
+            tailored for you and your family.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#buy" class="bg-secondary px-8 py-4 rounded-lg font-semibold inline-block">
+                Buy Policy
+            </a>
+
+            <a href="#renew" class="border border-white px-8 py-4 rounded-lg inline-block">
+                Renew Policy
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
+
+            <div class="bg-white/20 p-4 rounded-xl">
+                <h3 class="text-3xl font-bold">1M+</h3>
+                <p>Customers</p>
+            </div>
+
+            <div class="bg-white/20 p-4 rounded-xl">
+                <h3 class="text-3xl font-bold">500K+</h3>
+                <p>Claims Settled</p>
+            </div>
+
+            <div class="bg-white/20 p-4 rounded-xl">
+                <h3 class="text-3xl font-bold">24x7</h3>
+                <p>Support</p>
+            </div>
+
+            <div class="bg-white/20 p-4 rounded-xl">
+                <h3 class="text-3xl font-bold">98%</h3>
+                <p>Claim Ratio</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- QUICK QUOTE -->
+<section class="bg-white py-12 -mt-12 relative z-20 max-w-6xl mx-auto rounded-2xl shadow-xl">
+
+    <form id="quickQuoteForm" class="grid md:grid-cols-4 gap-4 px-8">
+
+        <input
+            id="quoteName"
+            type="text"
+            placeholder="Full Name"
+            class="border p-3 rounded-lg"
+            required
+        >
+
+        <input
+            id="quotePhone"
+            type="tel"
+            placeholder="Mobile Number"
+            class="border p-3 rounded-lg"
+            required
+        >
+
+        <select id="quoteType" class="border p-3 rounded-lg" required>
+            <option value="">Select Insurance</option>
+            <option>Health Insurance</option>
+            <option>Car Insurance</option>
+            <option>Bike Insurance</option>
+            <option>Travel Insurance</option>
+            <option>Home Insurance</option>
+            <option>Life Insurance</option>
+        </select>
+
+        <button type="submit" class="bg-primary text-white rounded-lg">
+            Get Free Quote
+        </button>
+
+        <div id="quoteMessage" class="md:col-span-4 hidden rounded-lg border border-green-200 bg-green-50 p-4 text-green-700">
+            Thank you! Your quote request has been received. Our team will contact you shortly.
+        </div>
+
+    </form>
+
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="py-20">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center">
+            Our Insurance Products
+        </h2>
+
+        <p class="text-center text-gray-600 mt-3">
+            Choose the right insurance plan for your needs.
+        </p>
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
+
+            <!-- Card -->
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">🏥</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Health Insurance
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Comprehensive healthcare coverage.
+                </p>
+                <button class="mt-5 text-primary font-semibold">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">🚗</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Car Insurance
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Secure your vehicle from damages.
+                </p>
+                <button class="mt-5 text-primary font-semibold">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">🏍️</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Bike Insurance
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Protection for your two wheeler.
+                </p>
+                <button class="mt-5 text-primary font-semibold">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">✈️</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Travel Insurance
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Travel worry-free anywhere.
+                </p>
+                <button class="mt-5 text-primary font-semibold">
+                    Explore →
+                </button>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">🏠</div>
+                <h3 class="font-bold text-xl mt-4">
+                    Home Insurance
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Protect your home and assets.
+                </p>
+                <button class="mt-5 text-primary font-semibold">
+                    Explore →
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="overflow-hidden rounded-[30px] shadow-lg">
+            <img src="assets/owner.jpg" alt="Pavan Kumar, Owner" class="w-full h-full object-cover min-h-[420px]">
+        </div>
+        <div>
+            <span class="text-secondary uppercase tracking-[0.3em] font-semibold">Meet the Founder</span>
+            <h2 class="text-4xl font-bold mt-4">Pavan Kumar</h2>
+            <p class="mt-6 text-gray-600 leading-8">
+                Pavan Insurance Company was built to deliver honest, customer-first insurance solutions for families and businesses. Our focus is on clear policies, fast claim support, and affordable coverage.
+            </p>
+            <p class="mt-4 text-gray-600 leading-8">
+                With years of experience in general and life insurance, Pavan leads the team with a commitment to trust, transparency, and long-term protection.
+            </p>
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-6 rounded-3xl shadow-sm">
+                    <h3 class="text-3xl font-bold text-primary">20+</h3>
+                    <p class="mt-2 text-gray-600">Years of experience</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-3xl shadow-sm">
+                    <h3 class="text-3xl font-bold text-primary">1M+</h3>
+                    <p class="mt-2 text-gray-600">Satisfied customers</p>
+                </div>
+            </div>
+            <a href="contact.html" class="inline-block mt-8 bg-primary text-white px-8 py-4 rounded-lg">
+                Talk to Pavan
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- BUY & RENEW -->
+<section id="buy" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+            <h2 class="text-4xl font-bold">Buy Insurance Policy</h2>
+            <p class="mt-6 text-gray-600 leading-8">
+                Choose a policy that fits your needs and start protecting what matters most. Our team is ready to help you compare plans and complete your purchase quickly.
+            </p>
+            <ul class="mt-8 space-y-4 text-gray-600">
+                <li>• Health plans for individuals and families</li>
+                <li>• Car and bike insurance with roadside support</li>
+                <li>• Home and travel coverage for peace of mind</li>
+                <li>• Life insurance with family protection benefits</li>
+            </ul>
+            <a href="contact.html" class="mt-8 inline-block bg-primary text-white px-8 py-4 rounded-lg">
+                Contact Sales
+            </a>
+        </div>
+        <div class="bg-white p-10 rounded-3xl shadow-lg">
+            <h3 class="text-3xl font-bold">Ready to Buy?</h3>
+            <p class="mt-3 text-gray-600">
+                Start the process now with a quick quote or reach out to our team for personalized guidance.
+            </p>
+            <div class="mt-8 space-y-4">
+                <a href="#contact" class="block bg-secondary text-white px-6 py-4 rounded-lg text-center">
+                    Get a Quote
+                </a>
+                <a href="product.html" class="block border border-primary text-primary px-6 py-4 rounded-lg text-center">
+                    View Products
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="renew" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="order-2 lg:order-1">
+            <h2 class="text-4xl font-bold">Renew Your Policy</h2>
+            <p class="mt-6 text-gray-600 leading-8">
+                Renew your existing coverage before it expires to stay protected without interruption. We make renewals fast, easy, and affordable.
+            </p>
+            <ul class="mt-8 space-y-4 text-gray-600">
+                <li>• Renew car, bike, home, travel, health, and life policies</li>
+                <li>• Compare renewal benefits and discounts</li>
+                <li>• Keep existing benefits and network support</li>
+                <li>• Get instant renewal confirmation online</li>
+            </ul>
+            <a href="contact.html" class="mt-8 inline-block bg-primary text-white px-8 py-4 rounded-lg">
+                Renew Now
+            </a>
+        </div>
+        <div class="bg-blue-50 p-10 rounded-3xl shadow-lg order-1 lg:order-2">
+            <h3 class="text-3xl font-bold">Keep Your Coverage Active</h3>
+            <p class="mt-3 text-gray-600">
+                Avoid coverage gaps and keep your family, vehicle, and property protected with a smooth renewal experience.
+            </p>
+            <div class="mt-8 space-y-4">
+                <a href="contact.html" class="block bg-primary text-white px-6 py-4 rounded-lg text-center">
+                    Talk to Support
+                </a>
+                <a href="#quote" class="block border border-primary text-primary px-6 py-4 rounded-lg text-center">
+                    Request Renewal Quote
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                Why Choose Pavan Insurance?
+            </h2>
+            <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+                We provide affordable premiums, quick claim settlement,
+                24x7 customer support, and extensive coverage options.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+
+            <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">⚡</div>
+                <h3 class="text-xl font-bold mt-4">
+                    Fast Claims
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Hassle-free and quick claim processing.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">🛡️</div>
+                <h3 class="text-xl font-bold mt-4">
+                    Trusted Coverage
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Comprehensive protection for every need.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">📞</div>
+                <h3 class="text-xl font-bold mt-4">
+                    24x7 Support
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Our support team is always available.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+                <div class="text-5xl">💰</div>
+                <h3 class="text-xl font-bold mt-4">
+                    Affordable Premiums
+                </h3>
+                <p class="text-gray-600 mt-3">
+                    Get maximum coverage at competitive prices.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CLAIMS PROCESS -->
+<section id="claims" class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                Easy Claims Process
+            </h2>
+
+            <p class="text-gray-600 mt-3">
+                Submit your claim in just a few simple steps.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8 mt-14">
+
+            <div class="text-center">
+                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl mx-auto">
+                    1
+                </div>
+
+                <h3 class="font-bold text-xl mt-5">
+                    Register Claim
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Notify us online or by phone.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl mx-auto">
+                    2
+                </div>
+
+                <h3 class="font-bold text-xl mt-5">
+                    Upload Documents
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Submit required documents securely.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl mx-auto">
+                    3
+                </div>
+
+                <h3 class="font-bold text-xl mt-5">
+                    Verification
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Our team verifies your claim quickly.
+                </p>
+            </div>
+
+            <div class="text-center">
+                <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl mx-auto">
+                    4
+                </div>
+
+                <h3 class="font-bold text-xl mt-5">
+                    Settlement
+                </h3>
+
+                <p class="text-gray-600 mt-2">
+                    Receive claim settlement promptly.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- STATISTICS -->
+<section class="py-20 bg-primary text-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+
+            <div>
+                <h3 class="text-5xl font-bold">
+                    1M+
+                </h3>
+                <p class="mt-3">
+                    Happy Customers
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-5xl font-bold">
+                    98%
+                </h3>
+                <p class="mt-3">
+                    Claim Settlement Ratio
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-5xl font-bold">
+                    5000+
+                </h3>
+                <p class="mt-3">
+                    Network Hospitals
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-5xl font-bold">
+                    24x7
+                </h3>
+                <p class="mt-3">
+                    Customer Support
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CUSTOMER BENEFITS -->
+<section class="py-20 bg-gray-50">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+            <div>
+                <h2 class="text-4xl font-bold">
+                    Benefits You Can Trust
+                </h2>
+
+                <p class="text-gray-600 mt-6">
+                    Pavan Insurance offers modern insurance
+                    solutions designed for individuals,
+                    families, and businesses.
+                </p>
+
+                <div class="mt-8 space-y-5">
+
+                    <div class="flex items-center gap-4">
+                        <span class="text-green-600 text-2xl">✔</span>
+                        <p>Cashless hospital network</p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="text-green-600 text-2xl">✔</span>
+                        <p>Instant policy issuance</p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="text-green-600 text-2xl">✔</span>
+                        <p>Affordable premium plans</p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="text-green-600 text-2xl">✔</span>
+                        <p>Transparent claim tracking</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bg-white p-10 rounded-3xl shadow-lg">
+                <h3 class="text-3xl font-bold">
+                    Get a Free Quote
+                </h3>
+
+                <form class="mt-8 space-y-5">
+
+                    <input
+                        type="text"
+                        placeholder="Full Name"
+                        class="w-full border p-4 rounded-lg"
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Email Address"
+                        class="w-full border p-4 rounded-lg"
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        class="w-full border p-4 rounded-lg"
+                    >
+
+                    <select
+                        class="w-full border p-4 rounded-lg"
+                    >
+                        <option>Select Insurance</option>
+                        <option>Health Insurance</option>
+                        <option>Car Insurance</option>
+                        <option>Bike Insurance</option>
+                        <option>Travel Insurance</option>
+                        <option>Home Insurance</option>
+                    </select>
+
+                    <button
+                        class="w-full bg-secondary text-white py-4 rounded-lg font-semibold"
+                    >
+                        Request Quote
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA SECTION -->
+<section class="py-20 bg-secondary text-white">
+
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold">
+            Protect What Matters Most
+        </h2>
+
+        <p class="mt-5 text-lg">
+            Choose the right insurance plan today and
+            secure your future with confidence.
+        </p>
+
+        <button
+            class="mt-8 bg-white text-secondary px-8 py-4 rounded-lg font-bold hover:scale-105 transition"
+        >
+            Buy Insurance Now
+        </button>
+
+    </div>
+
+</section>
+<!-- TESTIMONIALS -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                What Our Customers Say
+            </h2>
+            <p class="text-gray-600 mt-4">
+                Trusted by thousands of customers across India.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-14">
+
+            <div class="bg-gray-50 p-8 rounded-2xl shadow">
+                <div class="text-yellow-500 text-2xl">
+                    ★★★★★
+                </div>
+
+                <p class="mt-5 text-gray-600">
+                    The claim process was smooth and quick.
+                    Excellent customer support.
+                </p>
+
+                <div class="mt-6">
+                    <h4 class="font-bold">Rahul Sharma</h4>
+                    <p class="text-gray-500 text-sm">
+                        Health Insurance Customer
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl shadow">
+                <div class="text-yellow-500 text-2xl">
+                    ★★★★★
+                </div>
+
+                <p class="mt-5 text-gray-600">
+                    Renewing my car insurance took only minutes.
+                    Highly recommended.
+                </p>
+
+                <div class="mt-6">
+                    <h4 class="font-bold">Priya Verma</h4>
+                    <p class="text-gray-500 text-sm">
+                        Car Insurance Customer
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl shadow">
+                <div class="text-yellow-500 text-2xl">
+                    ★★★★★
+                </div>
+
+                <p class="mt-5 text-gray-600">
+                    Affordable premiums and transparent service.
+                    Very satisfied.
+                </p>
+
+                <div class="mt-6">
+                    <h4 class="font-bold">Arjun Reddy</h4>
+                    <p class="text-gray-500 text-sm">
+                        Travel Insurance Customer
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 bg-gray-100">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <div class="mt-12 space-y-4">
+
+            <div class="faq-item bg-white rounded-xl shadow">
+                <button class="faq-btn w-full p-5 flex justify-between items-center text-left font-semibold">
+                    How do I buy an insurance policy?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    Select your insurance type, enter details,
+                    compare plans and complete payment online.
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-xl shadow">
+                <button class="faq-btn w-full p-5 flex justify-between items-center text-left font-semibold">
+                    How can I file a claim?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    Register your claim online and upload the
+                    required documents for verification.
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-xl shadow">
+                <button class="faq-btn w-full p-5 flex justify-between items-center text-left font-semibold">
+                    Can I renew my policy online?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    Yes, policy renewal is available online in just a few steps.
+                </div>
+            </div>
+
+            <div class="faq-item bg-white rounded-xl shadow">
+                <button class="faq-btn w-full p-5 flex justify-between items-center text-left font-semibold">
+                    Is customer support available 24x7?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-content hidden px-5 pb-5 text-gray-600">
+                    Our support team is available around the clock.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <div>
+                <h2 class="text-4xl font-bold">
+                    Contact Us
+                </h2>
+
+                <p class="text-gray-600 mt-5">
+                    Have questions? Our experts are here to help.
+                </p>
+
+                <div class="mt-8 space-y-5">
+
+                    <div class="flex items-center gap-4">
+                        <div class="text-2xl">📍</div>
+                        <p>Chennai, Tamil Nadu, India</p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="text-2xl">📞</div>
+                        <p>+91 98765 43210</p>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div class="text-2xl">✉️</div>
+                        <p>support@pavaninsurance.com</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl shadow">
+
+                <form class="space-y-5">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        class="w-full p-4 border rounded-lg"
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Email Address"
+                        class="w-full p-4 border rounded-lg"
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        class="w-full p-4 border rounded-lg"
+                    >
+
+                    <textarea
+                        rows="5"
+                        placeholder="Message"
+                        class="w-full p-4 border rounded-lg"
+                    ></textarea>
+
+                    <button
+                        class="bg-primary text-white px-8 py-4 rounded-lg w-full"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NEWSLETTER -->
+<section class="py-16 bg-primary text-white">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <h2 class="text-3xl font-bold">
+            Subscribe to Our Newsletter
+        </h2>
+
+        <p class="mt-4">
+            Get updates on new policies, offers and insurance tips.
+        </p>
+
+        <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+                class="px-5 py-4 rounded-lg text-black w-full md:w-96"
+            >
+
+            <button
+                class="bg-secondary px-8 py-4 rounded-lg font-semibold"
+            >
+                Subscribe
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- BACK TO TOP BUTTON -->
+<button
+    id="backToTop"
+    class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg hidden hover:scale-110 transition"
+>
+    ↑
+</button>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300">
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            <!-- Company -->
+            <div>
+                <h3 class="text-2xl font-bold text-white">
+                    Pavan Insurance
+                </h3>
+
+                <p class="mt-4 text-gray-400">
+                    Protecting lives and assets with reliable
+                    insurance solutions for individuals,
+                    families and businesses.
+                </p>
+
+                <div class="flex gap-4 mt-6 text-2xl">
+                    <a href="#" class="hover:text-white">📘</a>
+                    <a href="#" class="hover:text-white">📸</a>
+                    <a href="#" class="hover:text-white">🐦</a>
+                    <a href="#" class="hover:text-white">💼</a>
+                </div>
+            </div>
+
+            <!-- Products -->
+            <div>
+                <h4 class="text-white text-xl font-semibold mb-4">
+                    Products
+                </h4>
+
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-white">Health Insurance</a></li>
+                    <li><a href="#" class="hover:text-white">Car Insurance</a></li>
+                    <li><a href="#" class="hover:text-white">Bike Insurance</a></li>
+                    <li><a href="#" class="hover:text-white">Travel Insurance</a></li>
+                    <li><a href="insurance/life-insurance.html" class="hover:text-white">Life Insurance</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white text-xl font-semibold mb-4">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3">
+                    <li><a href="#home" class="hover:text-white">Home</a></li>
+                    <li><a href="#products" class="hover:text-white">Products</a></li>
+                    <li><a href="#claims" class="hover:text-white">Claims</a></li>
+                    <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-white text-xl font-semibold mb-4">
+                    Contact
+                </h4>
+
+                <ul class="space-y-3">
+                    <li>📍 Chennai, Tamil Nadu, India</li>
+                    <li>📞 +91 98765 43210</li>
+                    <li>✉ support@pavaninsurance.com</li>
+                    <li>🕒 24×7 Customer Support</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr class="border-gray-700 my-8">
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+            <p class="text-sm">
+                © 2026 Pavan Insurance Company. All Rights Reserved.
+            </p>
+
+            <div class="flex gap-6 text-sm">
+                <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white">Terms & Conditions</a>
+                <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if(menuBtn){
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    }
+
+    // Back To Top Button
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+
+        if(window.scrollY > 300){
+            backToTop.classList.remove("hidden");
+        } else {
+            backToTop.classList.add("hidden");
+        }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // Simple Fade Animation
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+                entry.target.classList.add(
+                    "opacity-100",
+                    "translate-y-0"
+                );
+            }
+
+        });
+
+    });
+
+    document.querySelectorAll("section").forEach(section => {
+
+        section.classList.add(
+            "opacity-0",
+            "translate-y-8",
+            "transition-all",
+            "duration-700"
+        );
+
+        observer.observe(section);
+
+    });
+
+    // Quick Quote Form Handling
+    const quickQuoteForm = document.getElementById("quickQuoteForm");
+    const quoteMessage = document.getElementById("quoteMessage");
+
+    if (quickQuoteForm) {
+        quickQuoteForm.addEventListener("submit", event => {
+            event.preventDefault();
+
+            const name = document.getElementById("quoteName").value.trim();
+            const phone = document.getElementById("quotePhone").value.trim();
+            const type = document.getElementById("quoteType").value.trim();
+
+            const subject = encodeURIComponent("Insurance Quote Request");
+            const body = encodeURIComponent(
+                `Name: ${name}\nPhone: ${phone}\nInsurance Type: ${type}`
+            );
+
+            window.location.href = `mailto:sharathkrithick@gmail.com?subject=${subject}&body=${body}`;
+
+            quoteMessage.classList.remove("hidden");
+            quickQuoteForm.reset();
+
+            setTimeout(() => {
+                quoteMessage.classList.add("hidden");
+            }, 6000);
+        });
+    }
+
+</script>
+
+</body>
+</html>
