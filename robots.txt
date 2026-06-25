@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pawan-isurance-company.vercel.app/sitemap.xml
